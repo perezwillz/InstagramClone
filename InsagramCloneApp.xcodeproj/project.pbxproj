@@ -18,6 +18,12 @@
 		B94FBEE121B4D038007C3A92 /* ActivityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B94FBEE021B4D038007C3A92 /* ActivityViewController.swift */; };
 		B94FBEE321B4D051007C3A92 /* PhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B94FBEE221B4D051007C3A92 /* PhotoViewController.swift */; };
 		B94FBEE521B4D06E007C3A92 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B94FBEE421B4D06E007C3A92 /* SearchViewController.swift */; };
+		B94FBEE721B51EE8007C3A92 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B94FBEE621B51EE8007C3A92 /* Main.storyboard */; };
+		B94FBEEA21B52D6E007C3A92 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B94FBEE921B52D6E007C3A92 /* Home.storyboard */; };
+		B94FBEEC21B52D9E007C3A92 /* Search.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B94FBEEB21B52D9E007C3A92 /* Search.storyboard */; };
+		B94FBEEE21B52DCD007C3A92 /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B94FBEED21B52DCD007C3A92 /* Profile.storyboard */; };
+		B94FBEF021B52DEB007C3A92 /* Activity.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B94FBEEF21B52DEB007C3A92 /* Activity.storyboard */; };
+		B94FBEF221B52E0B007C3A92 /* Photo.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B94FBEF121B52E0B007C3A92 /* Photo.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +40,12 @@
 		B94FBEE021B4D038007C3A92 /* ActivityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityViewController.swift; sourceTree = "<group>"; };
 		B94FBEE221B4D051007C3A92 /* PhotoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoViewController.swift; sourceTree = "<group>"; };
 		B94FBEE421B4D06E007C3A92 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		B94FBEE621B51EE8007C3A92 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		B94FBEE921B52D6E007C3A92 /* Home.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
+		B94FBEEB21B52D9E007C3A92 /* Search.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Search.storyboard; sourceTree = "<group>"; };
+		B94FBEED21B52DCD007C3A92 /* Profile.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
+		B94FBEEF21B52DEB007C3A92 /* Activity.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Activity.storyboard; sourceTree = "<group>"; };
+		B94FBEF121B52E0B007C3A92 /* Photo.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Photo.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,6 +82,8 @@
 				B94FBEDA21B4CFD2007C3A92 /* SignUP&SignIn */,
 				B94FBEDB21B4CFE6007C3A92 /* TabBarVC's */,
 				B94FBED321B4B3B8007C3A92 /* Start.storyboard */,
+				B94FBEE621B51EE8007C3A92 /* Main.storyboard */,
+				B94FBEE821B52D19007C3A92 /* TabBarStoryBoards */,
 				B94FBEC821B4B327007C3A92 /* Assets.xcassets */,
 				B94FBECA21B4B327007C3A92 /* LaunchScreen.storyboard */,
 				B94FBECD21B4B327007C3A92 /* Info.plist */,
@@ -96,6 +110,18 @@
 				B94FBEE421B4D06E007C3A92 /* SearchViewController.swift */,
 			);
 			name = "TabBarVC's";
+			sourceTree = "<group>";
+		};
+		B94FBEE821B52D19007C3A92 /* TabBarStoryBoards */ = {
+			isa = PBXGroup;
+			children = (
+				B94FBEF121B52E0B007C3A92 /* Photo.storyboard */,
+				B94FBEEF21B52DEB007C3A92 /* Activity.storyboard */,
+				B94FBEED21B52DCD007C3A92 /* Profile.storyboard */,
+				B94FBEEB21B52D9E007C3A92 /* Search.storyboard */,
+				B94FBEE921B52D6E007C3A92 /* Home.storyboard */,
+			);
+			name = TabBarStoryBoards;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -157,8 +183,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				B94FBECC21B4B327007C3A92 /* LaunchScreen.storyboard in Resources */,
+				B94FBEEA21B52D6E007C3A92 /* Home.storyboard in Resources */,
+				B94FBEF221B52E0B007C3A92 /* Photo.storyboard in Resources */,
 				B94FBEC921B4B327007C3A92 /* Assets.xcassets in Resources */,
 				B94FBED421B4B3B8007C3A92 /* Start.storyboard in Resources */,
+				B94FBEEC21B52D9E007C3A92 /* Search.storyboard in Resources */,
+				B94FBEEE21B52DCD007C3A92 /* Profile.storyboard in Resources */,
+				B94FBEE721B51EE8007C3A92 /* Main.storyboard in Resources */,
+				B94FBEF021B52DEB007C3A92 /* Activity.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

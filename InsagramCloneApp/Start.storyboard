@@ -49,7 +49,7 @@
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <connections>
-                                            <segue destination="Kbk-cq-d5m" kind="presentation" id="qbE-1c-qnV"/>
+                                            <segue destination="6Fw-Wb-6fP" kind="presentation" id="qbE-1c-qnV"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -127,7 +127,7 @@
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <connections>
-                                            <segue destination="Kbk-cq-d5m" kind="presentation" id="TsS-Tq-N9D"/>
+                                            <segue destination="6Fw-Wb-6fP" kind="presentation" id="TsS-Tq-N9D"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -174,121 +174,19 @@
             </objects>
             <point key="canvasLocation" x="904.79999999999995" y="154.27286356821591"/>
         </scene>
-        <!--Search View Controller-->
-        <scene sceneID="Ivs-iQ-9Sa">
+        <!--Main-->
+        <scene sceneID="Dlj-eB-lWQ">
             <objects>
-                <viewController id="3NH-Wz-Ayr" customClass="SearchViewController" customModule="InsagramCloneApp" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="r9r-pg-giY">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <viewLayoutGuide key="safeArea" id="OiZ-jO-Cj9"/>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="" image="Search" selectedImage="Search_Selected" id="rcd-Ck-FGQ"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="YrF-nH-5ia" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2515" y="462"/>
-        </scene>
-        <!--Home View Controller-->
-        <scene sceneID="hxx-1W-oh9">
-            <objects>
-                <viewController id="Uvv-ZA-r2n" customClass="HomeViewController" customModule="InsagramCloneApp" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="w5b-xw-g97">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <viewLayoutGuide key="safeArea" id="yjk-tO-rl6"/>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="" image="Home" selectedImage="Home_Selected" id="Den-Pn-6Hl"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="2ZT-67-aWm" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2515" y="-203"/>
-        </scene>
-        <!--Profile View Controller-->
-        <scene sceneID="s0L-zU-OjD">
-            <objects>
-                <viewController id="Vfg-lc-dbO" customClass="ProfileViewController" customModule="InsagramCloneApp" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="HAU-Li-lJO">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <viewLayoutGuide key="safeArea" id="UnW-sK-QjO"/>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="" image="Profile" selectedImage="Profile_Selected" id="sEu-nS-xp6"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Tq2-EI-JZY" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="3230" y="-642"/>
-        </scene>
-        <!--Tab Bar Controller-->
-        <scene sceneID="q4H-Df-FrQ">
-            <objects>
-                <tabBarController id="Kbk-cq-d5m" sceneMemberID="viewController">
-                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="8Ql-OB-dCy">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    </tabBar>
-                    <connections>
-                        <segue destination="Uvv-ZA-r2n" kind="relationship" relationship="viewControllers" id="7Xr-xr-mDD"/>
-                        <segue destination="3NH-Wz-Ayr" kind="relationship" relationship="viewControllers" id="5DG-T9-aLT"/>
-                        <segue destination="cHB-xE-cWO" kind="relationship" relationship="viewControllers" id="NfD-CJ-ue0"/>
-                        <segue destination="sbt-Oz-wjp" kind="relationship" relationship="viewControllers" id="b7O-3u-fIm"/>
-                        <segue destination="Vfg-lc-dbO" kind="relationship" relationship="viewControllers" id="vYL-7M-EKG"/>
-                    </connections>
-                </tabBarController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="nIj-3F-WcS" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewControllerPlaceholder storyboardName="Main" id="6Fw-Wb-6fP" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="P0t-Ah-oVR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1735" y="106"/>
         </scene>
-        <!--Activity View Controller-->
-        <scene sceneID="g5K-im-F4p">
-            <objects>
-                <viewController id="sbt-Oz-wjp" customClass="ActivityViewController" customModule="InsagramCloneApp" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="Iac-ZQ-wzE">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <viewLayoutGuide key="safeArea" id="qbg-xI-HpU"/>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="" image="Activity" selectedImage="Activity_Selected" id="rnd-ID-K7g"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="8LC-h2-AoG" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="3230" y="39"/>
-        </scene>
-        <!--Photo View Controller-->
-        <scene sceneID="c2W-Fx-YLj">
-            <objects>
-                <viewController id="cHB-xE-cWO" customClass="PhotoViewController" customModule="InsagramCloneApp" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="to3-0b-Tb2">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <viewLayoutGuide key="safeArea" id="J9J-ds-w0B"/>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="" image="Photo" selectedImage="Photo" id="2vH-So-3tN"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="T0Q-Hk-vr4" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="3230" y="726"/>
-        </scene>
     </scenes>
     <resources>
-        <image name="Activity" width="22" height="20"/>
-        <image name="Activity_Selected" width="22" height="20"/>
-        <image name="Home" width="21" height="23"/>
-        <image name="Home_Selected" width="21" height="23"/>
-        <image name="Photo" width="22" height="23"/>
-        <image name="Profile" width="20" height="21"/>
-        <image name="Profile_Selected" width="20" height="21"/>
-        <image name="Search" width="23" height="22"/>
-        <image name="Search_Selected" width="23" height="22"/>
         <image name="user-5" width="512" height="512"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="qbE-1c-qnV"/>
+        <segue reference="TsS-Tq-N9D"/>
     </inferredMetricsTieBreakers>
 </document>
