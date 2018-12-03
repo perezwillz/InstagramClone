@@ -22,7 +22,7 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="58" id="vMw-9E-RzB"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="HoeflerText-Italic" family="Hoefler Text" pointSize="36"/>
+                                <fontDescription key="fontDescription" name="Noteworthy-Light" family="Noteworthy" pointSize="36"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -48,6 +48,9 @@
                                         <state key="normal" title="Sign In">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
+                                        <connections>
+                                            <segue destination="Kbk-cq-d5m" kind="presentation" id="qbE-1c-qnV"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <constraints>
@@ -62,6 +65,9 @@
                                 <state key="normal" title="Don't have an account? Sign up.">
                                     <color key="titleColor" white="1" alpha="0.60442529965753422" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <segue destination="Npz-Hi-CQP" kind="show" id="NxT-RA-s4r"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -84,5 +90,205 @@
             </objects>
             <point key="canvasLocation" x="133.59999999999999" y="155.17241379310346"/>
         </scene>
+        <!--SignUP View Controller-->
+        <scene sceneID="j7i-Hu-UGz">
+            <objects>
+                <viewController id="Npz-Hi-CQP" customClass="SignUPViewController" customModule="InsagramCloneApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="RbR-8H-QbQ">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="m0I-m8-2KS">
+                                <rect key="frame" x="16" y="233.5" width="343" height="200"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rBD-xP-7ka">
+                                        <rect key="frame" x="0.0" y="0.0" width="343" height="33"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="SuD-OR-qzk">
+                                        <rect key="frame" x="0.0" y="53" width="343" height="32.5"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="p6o-tP-Jk2">
+                                        <rect key="frame" x="0.0" y="105.5" width="343" height="33"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VKC-8g-tC8">
+                                        <rect key="frame" x="0.0" y="158.5" width="343" height="41.5"/>
+                                        <color key="backgroundColor" white="1" alpha="0.5995023545" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <state key="normal" title="Sign up">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <segue destination="Kbk-cq-d5m" kind="presentation" id="TsS-Tq-N9D"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="200" id="Fir-nV-Btg"/>
+                                </constraints>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KXg-y2-gd5">
+                                <rect key="frame" x="0.0" y="622" width="375" height="45"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="fwv-qh-XJe"/>
+                                </constraints>
+                                <state key="normal" title="Already have an account, Sign In.">
+                                    <color key="titleColor" white="1" alpha="0.60442529970000003" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="dismissView:" destination="Npz-Hi-CQP" eventType="touchUpInside" id="dSb-LQ-Rx1"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="user-5" translatesAutoresizingMaskIntoConstraints="NO" id="gbg-0e-9ER">
+                                <rect key="frame" x="112.5" y="53.5" width="150" height="150"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="150" id="O2i-te-IZS"/>
+                                    <constraint firstAttribute="height" constant="150" id="pQ0-Or-l7b"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="gbg-0e-9ER" firstAttribute="centerX" secondItem="RbR-8H-QbQ" secondAttribute="centerX" id="7U9-PN-UQf"/>
+                            <constraint firstItem="KXg-y2-gd5" firstAttribute="bottom" secondItem="9ri-SQ-0ia" secondAttribute="bottom" id="DiA-wh-bSK"/>
+                            <constraint firstItem="KXg-y2-gd5" firstAttribute="trailing" secondItem="9ri-SQ-0ia" secondAttribute="trailing" id="Ipx-Ss-x1A"/>
+                            <constraint firstItem="m0I-m8-2KS" firstAttribute="centerY" secondItem="RbR-8H-QbQ" secondAttribute="centerY" id="LXo-So-Dsq"/>
+                            <constraint firstItem="9ri-SQ-0ia" firstAttribute="trailing" secondItem="m0I-m8-2KS" secondAttribute="trailing" constant="16" id="QjI-Fb-JS4"/>
+                            <constraint firstItem="m0I-m8-2KS" firstAttribute="top" secondItem="gbg-0e-9ER" secondAttribute="bottom" constant="30" id="YUs-rF-9SD"/>
+                            <constraint firstItem="m0I-m8-2KS" firstAttribute="centerX" secondItem="RbR-8H-QbQ" secondAttribute="centerX" id="d0Q-Cs-Y9C"/>
+                            <constraint firstItem="KXg-y2-gd5" firstAttribute="leading" secondItem="9ri-SQ-0ia" secondAttribute="leading" id="ghl-me-Vf7"/>
+                            <constraint firstItem="m0I-m8-2KS" firstAttribute="leading" secondItem="9ri-SQ-0ia" secondAttribute="leading" constant="16" id="zLh-kR-PRZ"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="9ri-SQ-0ia"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aa9-Vt-Ldj" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="904.79999999999995" y="154.27286356821591"/>
+        </scene>
+        <!--Search View Controller-->
+        <scene sceneID="Ivs-iQ-9Sa">
+            <objects>
+                <viewController id="3NH-Wz-Ayr" customClass="SearchViewController" customModule="InsagramCloneApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="r9r-pg-giY">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="OiZ-jO-Cj9"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="" image="Search" selectedImage="Search_Selected" id="rcd-Ck-FGQ"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YrF-nH-5ia" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2515" y="462"/>
+        </scene>
+        <!--Home View Controller-->
+        <scene sceneID="hxx-1W-oh9">
+            <objects>
+                <viewController id="Uvv-ZA-r2n" customClass="HomeViewController" customModule="InsagramCloneApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="w5b-xw-g97">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="yjk-tO-rl6"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="" image="Home" selectedImage="Home_Selected" id="Den-Pn-6Hl"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2ZT-67-aWm" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2515" y="-203"/>
+        </scene>
+        <!--Profile View Controller-->
+        <scene sceneID="s0L-zU-OjD">
+            <objects>
+                <viewController id="Vfg-lc-dbO" customClass="ProfileViewController" customModule="InsagramCloneApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="HAU-Li-lJO">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="UnW-sK-QjO"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="" image="Profile" selectedImage="Profile_Selected" id="sEu-nS-xp6"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Tq2-EI-JZY" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3230" y="-642"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="q4H-Df-FrQ">
+            <objects>
+                <tabBarController id="Kbk-cq-d5m" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="8Ql-OB-dCy">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="Uvv-ZA-r2n" kind="relationship" relationship="viewControllers" id="7Xr-xr-mDD"/>
+                        <segue destination="3NH-Wz-Ayr" kind="relationship" relationship="viewControllers" id="5DG-T9-aLT"/>
+                        <segue destination="cHB-xE-cWO" kind="relationship" relationship="viewControllers" id="NfD-CJ-ue0"/>
+                        <segue destination="sbt-Oz-wjp" kind="relationship" relationship="viewControllers" id="b7O-3u-fIm"/>
+                        <segue destination="Vfg-lc-dbO" kind="relationship" relationship="viewControllers" id="vYL-7M-EKG"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nIj-3F-WcS" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1735" y="106"/>
+        </scene>
+        <!--Activity View Controller-->
+        <scene sceneID="g5K-im-F4p">
+            <objects>
+                <viewController id="sbt-Oz-wjp" customClass="ActivityViewController" customModule="InsagramCloneApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Iac-ZQ-wzE">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="qbg-xI-HpU"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="" image="Activity" selectedImage="Activity_Selected" id="rnd-ID-K7g"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8LC-h2-AoG" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3230" y="39"/>
+        </scene>
+        <!--Photo View Controller-->
+        <scene sceneID="c2W-Fx-YLj">
+            <objects>
+                <viewController id="cHB-xE-cWO" customClass="PhotoViewController" customModule="InsagramCloneApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="to3-0b-Tb2">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="J9J-ds-w0B"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="" image="Photo" selectedImage="Photo" id="2vH-So-3tN"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="T0Q-Hk-vr4" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3230" y="726"/>
+        </scene>
     </scenes>
+    <resources>
+        <image name="Activity" width="22" height="20"/>
+        <image name="Activity_Selected" width="22" height="20"/>
+        <image name="Home" width="21" height="23"/>
+        <image name="Home_Selected" width="21" height="23"/>
+        <image name="Photo" width="22" height="23"/>
+        <image name="Profile" width="20" height="21"/>
+        <image name="Profile_Selected" width="20" height="21"/>
+        <image name="Search" width="23" height="22"/>
+        <image name="Search_Selected" width="23" height="22"/>
+        <image name="user-5" width="512" height="512"/>
+    </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="qbE-1c-qnV"/>
+    </inferredMetricsTieBreakers>
 </document>

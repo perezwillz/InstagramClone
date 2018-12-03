@@ -12,6 +12,12 @@
 		B94FBECC21B4B327007C3A92 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B94FBECA21B4B327007C3A92 /* LaunchScreen.storyboard */; };
 		B94FBED421B4B3B8007C3A92 /* Start.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B94FBED321B4B3B8007C3A92 /* Start.storyboard */; };
 		B94FBED621B4B6E0007C3A92 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B94FBED521B4B6E0007C3A92 /* SignInViewController.swift */; };
+		B94FBED821B4BF18007C3A92 /* SignUPViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B94FBED721B4BF18007C3A92 /* SignUPViewController.swift */; };
+		B94FBEDD21B4D014007C3A92 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B94FBEDC21B4D014007C3A92 /* HomeViewController.swift */; };
+		B94FBEDF21B4D02A007C3A92 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B94FBEDE21B4D02A007C3A92 /* ProfileViewController.swift */; };
+		B94FBEE121B4D038007C3A92 /* ActivityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B94FBEE021B4D038007C3A92 /* ActivityViewController.swift */; };
+		B94FBEE321B4D051007C3A92 /* PhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B94FBEE221B4D051007C3A92 /* PhotoViewController.swift */; };
+		B94FBEE521B4D06E007C3A92 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B94FBEE421B4D06E007C3A92 /* SearchViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +28,12 @@
 		B94FBECD21B4B327007C3A92 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B94FBED321B4B3B8007C3A92 /* Start.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Start.storyboard; sourceTree = "<group>"; };
 		B94FBED521B4B6E0007C3A92 /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
+		B94FBED721B4BF18007C3A92 /* SignUPViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUPViewController.swift; sourceTree = "<group>"; };
+		B94FBEDC21B4D014007C3A92 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		B94FBEDE21B4D02A007C3A92 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		B94FBEE021B4D038007C3A92 /* ActivityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityViewController.swift; sourceTree = "<group>"; };
+		B94FBEE221B4D051007C3A92 /* PhotoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoViewController.swift; sourceTree = "<group>"; };
+		B94FBEE421B4D06E007C3A92 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,13 +67,35 @@
 			isa = PBXGroup;
 			children = (
 				B94FBEC121B4B322007C3A92 /* AppDelegate.swift */,
-				B94FBED521B4B6E0007C3A92 /* SignInViewController.swift */,
+				B94FBEDA21B4CFD2007C3A92 /* SignUP&SignIn */,
+				B94FBEDB21B4CFE6007C3A92 /* TabBarVC's */,
 				B94FBED321B4B3B8007C3A92 /* Start.storyboard */,
 				B94FBEC821B4B327007C3A92 /* Assets.xcassets */,
 				B94FBECA21B4B327007C3A92 /* LaunchScreen.storyboard */,
 				B94FBECD21B4B327007C3A92 /* Info.plist */,
 			);
 			path = InsagramCloneApp;
+			sourceTree = "<group>";
+		};
+		B94FBEDA21B4CFD2007C3A92 /* SignUP&SignIn */ = {
+			isa = PBXGroup;
+			children = (
+				B94FBED521B4B6E0007C3A92 /* SignInViewController.swift */,
+				B94FBED721B4BF18007C3A92 /* SignUPViewController.swift */,
+			);
+			path = "SignUP&SignIn";
+			sourceTree = "<group>";
+		};
+		B94FBEDB21B4CFE6007C3A92 /* TabBarVC's */ = {
+			isa = PBXGroup;
+			children = (
+				B94FBEDC21B4D014007C3A92 /* HomeViewController.swift */,
+				B94FBEDE21B4D02A007C3A92 /* ProfileViewController.swift */,
+				B94FBEE021B4D038007C3A92 /* ActivityViewController.swift */,
+				B94FBEE221B4D051007C3A92 /* PhotoViewController.swift */,
+				B94FBEE421B4D06E007C3A92 /* SearchViewController.swift */,
+			);
+			name = "TabBarVC's";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -136,7 +170,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				B94FBED621B4B6E0007C3A92 /* SignInViewController.swift in Sources */,
+				B94FBEE121B4D038007C3A92 /* ActivityViewController.swift in Sources */,
+				B94FBEE521B4D06E007C3A92 /* SearchViewController.swift in Sources */,
+				B94FBED821B4BF18007C3A92 /* SignUPViewController.swift in Sources */,
+				B94FBEDF21B4D02A007C3A92 /* ProfileViewController.swift in Sources */,
+				B94FBEE321B4D051007C3A92 /* PhotoViewController.swift in Sources */,
 				B94FBEC221B4B322007C3A92 /* AppDelegate.swift in Sources */,
+				B94FBEDD21B4D014007C3A92 /* HomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
