@@ -85,6 +85,10 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="HJJ-Rw-cVd"/>
                     </view>
+                    <connections>
+                        <outlet property="emailTextField" destination="IYs-1N-ivW" id="WE9-4g-Xo5"/>
+                        <outlet property="passwordTextField" destination="nH0-9o-qi6" id="irj-uJ-8bt"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UYj-rj-SD9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -111,13 +115,13 @@
                                         <rect key="frame" x="0.0" y="53" width="343" height="32.5"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                        <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="p6o-tP-Jk2">
                                         <rect key="frame" x="0.0" y="105.5" width="343" height="33"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VKC-8g-tC8">
                                         <rect key="frame" x="0.0" y="158.5" width="343" height="41.5"/>
@@ -169,6 +173,12 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="9ri-SQ-0ia"/>
                     </view>
+                    <connections>
+                        <outlet property="emailTextField" destination="SuD-OR-qzk" id="MN9-sp-kBR"/>
+                        <outlet property="passwordTextField" destination="p6o-tP-Jk2" id="HHy-u8-eOo"/>
+                        <outlet property="profileImage" destination="gbg-0e-9ER" id="mlc-yT-1KZ"/>
+                        <outlet property="userNameTextField" destination="rBD-xP-7ka" id="Y9Y-Bn-ODd"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aa9-Vt-Ldj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

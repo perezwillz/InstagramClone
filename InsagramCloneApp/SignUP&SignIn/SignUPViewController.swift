@@ -10,22 +10,58 @@ import UIKit
 
 class SignUPViewController: UIViewController {
 
+    @IBOutlet weak var profileImage: UIImageView!
+    @IBOutlet weak var userNameTextField: UITextField!
+    @IBOutlet weak var emailTextField: UITextField!
+    @IBOutlet weak var passwordTextField: UITextField!
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        setUpViews()
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    func setUpViews(){
+        //userName
+        userNameTextField.backgroundColor = UIColor.clear
+        guard let userNamePlaceHolder = userNameTextField.placeholder else {return}
+        userNameTextField.tintColor = .white
+        userNameTextField.textColor = .white
+        let userNameBottomLayer = CALayer()
+        userNameBottomLayer.frame = CGRect(x: 0, y: 32, width: view.frame.width - 30, height: 0.6)
+        userNameBottomLayer.backgroundColor = UIColor(red: 50/225, green: 50/255, blue: 25/255, alpha: 1).cgColor
+        userNameTextField.layer.addSublayer(userNameBottomLayer)
+       userNameTextField.attributedPlaceholder = NSAttributedString(string: userNamePlaceHolder, attributes: [NSAttributedString.Key.foregroundColor : UIColor(white: 1.0, alpha: 0.6)])
+        
+        //EmailtextField
+        emailTextField.backgroundColor = UIColor.clear
+        guard let placeHolder = emailTextField.placeholder else {return}
+        emailTextField.tintColor = .white
+        emailTextField.textColor = .white
+        let bottomLayer = CALayer()
+        bottomLayer.frame = CGRect(x: 0, y: 32, width: view.frame.width - 30, height: 0.6)
+        bottomLayer.backgroundColor = UIColor(red: 50/225, green: 50/255, blue: 25/255, alpha: 1).cgColor
+        emailTextField.layer.addSublayer(bottomLayer)
+        emailTextField.attributedPlaceholder = NSAttributedString(string: placeHolder, attributes: [NSAttributedString.Key.foregroundColor : UIColor(white: 1.0, alpha: 0.6)])
+        
+        
+        //Password
+        passwordTextField.backgroundColor = UIColor.clear
+        guard let passwordPlaceHolder = passwordTextField.placeholder else {return}
+        passwordTextField.tintColor = .white
+        passwordTextField.textColor = .white
+        let passwordBottomLayer = CALayer()
+        passwordBottomLayer.frame = CGRect(x: 0, y: 32, width: view.frame.width - 30, height: 0.6)
+        passwordBottomLayer.backgroundColor = UIColor(red: 50/225, green: 50/255, blue: 25/255, alpha: 1).cgColor
+        passwordTextField.layer.addSublayer(passwordBottomLayer)
+        passwordTextField.attributedPlaceholder = NSAttributedString(string: passwordPlaceHolder, attributes: [NSAttributedString.Key.foregroundColor : UIColor(white: 1.0, alpha: 0.6)])
+        
+        //Image
+        profileImage.layer.cornerRadius = 75
+        profileImage.clipsToBounds = true
     }
-    */
     @IBAction func dismissView(_ sender: Any) {
         dismiss(animated: true, completion: nil)
     }

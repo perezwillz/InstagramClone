@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0E1A86427223D75BD9BE316C /* Pods_InsagramCloneApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DF4764FB8285B46A0BC73D93 /* Pods_InsagramCloneApp.framework */; };
 		B94FBEC221B4B322007C3A92 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B94FBEC121B4B322007C3A92 /* AppDelegate.swift */; };
 		B94FBEC921B4B327007C3A92 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B94FBEC821B4B327007C3A92 /* Assets.xcassets */; };
 		B94FBECC21B4B327007C3A92 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B94FBECA21B4B327007C3A92 /* LaunchScreen.storyboard */; };
@@ -24,9 +25,12 @@
 		B94FBEEE21B52DCD007C3A92 /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B94FBEED21B52DCD007C3A92 /* Profile.storyboard */; };
 		B94FBEF021B52DEB007C3A92 /* Activity.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B94FBEEF21B52DEB007C3A92 /* Activity.storyboard */; };
 		B94FBEF221B52E0B007C3A92 /* Photo.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B94FBEF121B52E0B007C3A92 /* Photo.storyboard */; };
+		B94FBEF421B64B2B007C3A92 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B94FBEF321B64B2B007C3A92 /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		04D981571DD453C5160B7E27 /* Pods-InsagramCloneApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InsagramCloneApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-InsagramCloneApp/Pods-InsagramCloneApp.debug.xcconfig"; sourceTree = "<group>"; };
+		4FABEDC99994B04466E7C857 /* Pods-InsagramCloneApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InsagramCloneApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-InsagramCloneApp/Pods-InsagramCloneApp.release.xcconfig"; sourceTree = "<group>"; };
 		B94FBEBE21B4B322007C3A92 /* InsagramCloneApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InsagramCloneApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B94FBEC121B4B322007C3A92 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B94FBEC821B4B327007C3A92 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -46,6 +50,8 @@
 		B94FBEED21B52DCD007C3A92 /* Profile.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
 		B94FBEEF21B52DEB007C3A92 /* Activity.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Activity.storyboard; sourceTree = "<group>"; };
 		B94FBEF121B52E0B007C3A92 /* Photo.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Photo.storyboard; sourceTree = "<group>"; };
+		B94FBEF321B64B2B007C3A92 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		DF4764FB8285B46A0BC73D93 /* Pods_InsagramCloneApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_InsagramCloneApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,17 +59,28 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0E1A86427223D75BD9BE316C /* Pods_InsagramCloneApp.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4B92DDA0DA45D7888893BD56 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				DF4764FB8285B46A0BC73D93 /* Pods_InsagramCloneApp.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		B94FBEB521B4B322007C3A92 = {
 			isa = PBXGroup;
 			children = (
 				B94FBEC021B4B322007C3A92 /* InsagramCloneApp */,
 				B94FBEBF21B4B322007C3A92 /* Products */,
+				FC92E7B1CAB0799982258A7C /* Pods */,
+				4B92DDA0DA45D7888893BD56 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -86,6 +103,7 @@
 				B94FBEE821B52D19007C3A92 /* TabBarStoryBoards */,
 				B94FBEC821B4B327007C3A92 /* Assets.xcassets */,
 				B94FBECA21B4B327007C3A92 /* LaunchScreen.storyboard */,
+				B94FBEF321B64B2B007C3A92 /* GoogleService-Info.plist */,
 				B94FBECD21B4B327007C3A92 /* Info.plist */,
 			);
 			path = InsagramCloneApp;
@@ -124,6 +142,15 @@
 			name = TabBarStoryBoards;
 			sourceTree = "<group>";
 		};
+		FC92E7B1CAB0799982258A7C /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				04D981571DD453C5160B7E27 /* Pods-InsagramCloneApp.debug.xcconfig */,
+				4FABEDC99994B04466E7C857 /* Pods-InsagramCloneApp.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -131,9 +158,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = B94FBED021B4B327007C3A92 /* Build configuration list for PBXNativeTarget "InsagramCloneApp" */;
 			buildPhases = (
+				5AA7A1ED85A4AC314A19E3D4 /* [CP] Check Pods Manifest.lock */,
 				B94FBEBA21B4B322007C3A92 /* Sources */,
 				B94FBEBB21B4B322007C3A92 /* Frameworks */,
 				B94FBEBC21B4B322007C3A92 /* Resources */,
+				BD017C12E419708C6492F307 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -189,12 +218,54 @@
 				B94FBED421B4B3B8007C3A92 /* Start.storyboard in Resources */,
 				B94FBEEC21B52D9E007C3A92 /* Search.storyboard in Resources */,
 				B94FBEEE21B52DCD007C3A92 /* Profile.storyboard in Resources */,
+				B94FBEF421B64B2B007C3A92 /* GoogleService-Info.plist in Resources */,
 				B94FBEE721B51EE8007C3A92 /* Main.storyboard in Resources */,
 				B94FBEF021B52DEB007C3A92 /* Activity.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		5AA7A1ED85A4AC314A19E3D4 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-InsagramCloneApp-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BD017C12E419708C6492F307 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-InsagramCloneApp/Pods-InsagramCloneApp-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-InsagramCloneApp/Pods-InsagramCloneApp-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		B94FBEBA21B4B322007C3A92 /* Sources */ = {
@@ -344,6 +415,7 @@
 		};
 		B94FBED121B4B327007C3A92 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 04D981571DD453C5160B7E27 /* Pods-InsagramCloneApp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -362,6 +434,7 @@
 		};
 		B94FBED221B4B327007C3A92 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4FABEDC99994B04466E7C857 /* Pods-InsagramCloneApp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
