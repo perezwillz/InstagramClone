@@ -131,7 +131,7 @@
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <connections>
-                                            <segue destination="6Fw-Wb-6fP" kind="presentation" id="TsS-Tq-N9D"/>
+                                            <action selector="signUpBtnTouchUpInside:" destination="Npz-Hi-CQP" eventType="touchUpInside" id="kSh-h4-IUX"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -196,7 +196,4 @@
     <resources>
         <image name="user-5" width="512" height="512"/>
     </resources>
-    <inferredMetricsTieBreakers>
-        <segue reference="TsS-Tq-N9D"/>
-    </inferredMetricsTieBreakers>
 </document>
