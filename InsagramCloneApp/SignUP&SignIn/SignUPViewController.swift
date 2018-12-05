@@ -8,6 +8,7 @@
 
 import UIKit
 import FirebaseAuth
+import FirebaseDatabase
 
 
 
@@ -71,21 +72,22 @@ class SignUPViewController: UIViewController {
     
     
     @IBAction func signUpBtnTouchUpInside(_ sender: Any) {
-//        Auth.auth().createUser(withEmail: email, password: password) { (authResult, error) in
-//            // ...
-//            guard let user = authResult?.user else { return }
-//        }
         
-     
-        
-        Auth.auth().createUser(withEmail: "User1@gmail.com", password: "123456") { (authResult : AuthDataResult?, error : Error?) in
+        guard let username = userNameTextField.text, let email = emailTextField.text, let password = passwordTextField.text else {return}
+    
+        Auth.auth().createUser(withEmail: email, password: password) { (authResult : AuthDataResult?, error : Error?) in
             
             if error != nil {
-                print(error?.localizedDescription)
+                print(error!.localizedDescription)
             return
         }
-        
-            print(authResult?.user)
+        let ref = Database.database().reference()
+        let userReference = ref.child("users")
+        let userID = authResult?.user.uid
+            guard let uid = userID else {return}
+        let newUserReference = userReference.child(uid)
+            newUserReference.setValue(["username " : username, "email " : email])
+            print("DESCRIPTION  : \(newUserReference.description())")
     }
     }
 }
