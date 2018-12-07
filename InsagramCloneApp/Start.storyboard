@@ -89,6 +89,7 @@
                         <outlet property="emailTextField" destination="IYs-1N-ivW" id="WE9-4g-Xo5"/>
                         <outlet property="passwordTextField" destination="nH0-9o-qi6" id="irj-uJ-8bt"/>
                         <outlet property="signInButton" destination="6CR-sE-pQ5" id="u1c-rz-nLJ"/>
+                        <segue destination="6Fw-Wb-6fP" kind="presentation" identifier="SignInToTabBar" id="Vd4-rJ-Ux7"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UYj-rj-SD9" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -180,6 +181,7 @@
                         <outlet property="profileImage" destination="gbg-0e-9ER" id="mlc-yT-1KZ"/>
                         <outlet property="signUpButton" destination="VKC-8g-tC8" id="VX3-VO-p6X"/>
                         <outlet property="userNameTextField" destination="rBD-xP-7ka" id="Y9Y-Bn-ODd"/>
+                        <segue destination="6Fw-Wb-6fP" kind="presentation" identifier="SignUPToTabBar" id="bUf-jZ-U4A"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aa9-Vt-Ldj" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -198,4 +200,7 @@
     <resources>
         <image name="user-5" width="512" height="512"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="bUf-jZ-U4A"/>
+    </inferredMetricsTieBreakers>
 </document>

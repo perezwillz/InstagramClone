@@ -148,6 +148,7 @@ class SignUPViewController: UIViewController {
                     }
                     let profileUrlString = downloadURL.absoluteString
                     setUsersInfo(profileURL: profileUrlString, username: username, email: email, uid: uid)
+                      self.performSegue(withIdentifier: "SignUPToTabBar", sender: nil)
                 })})
         }}}
 
@@ -157,6 +158,8 @@ func setUsersInfo(profileURL : String, username : String, email : String, uid : 
     let userReference = ref.child("users")
     let newUserReference = userReference.child(uid)
     newUserReference.setValue(["username " : username, "email " : email, "profilrURL " : profileURL])
+    
+    
 }
 
 extension SignUPViewController : UIImagePickerControllerDelegate, UINavigationControllerDelegate {

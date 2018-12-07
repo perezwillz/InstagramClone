@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import FirebaseAuth
 
 class SignInViewController: UIViewController {
     @IBOutlet weak var emailTextField: UITextField!
@@ -71,5 +72,16 @@ class SignInViewController: UIViewController {
 
 
     @IBAction func signInButtonTapped(_ sender: Any) {
+        guard let email = emailTextField.text, !email.isEmpty,
+            let password = passwordTextField.text, !password.isEmpty else
+        {return}
+        Auth.auth().signIn(withEmail: email, password: password) { (authDataResult, error) in
+            
+            if error != nil {
+                print(error!.localizedDescription)
+                return
+            }
+            self.performSegue(withIdentifier: "SignInToTabBar", sender: nil)
+        }
     }
 }
