@@ -12,7 +12,7 @@
         <!--Sign In View Controller-->
         <scene sceneID="hCA-qP-0GC">
             <objects>
-                <viewController id="Na1-I7-6M8" customClass="SignInViewController" customModule="InsagramCloneApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SignInVC" id="Na1-I7-6M8" customClass="SignInViewController" customModule="InsagramCloneApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="NT1-uh-bDc">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -201,6 +201,6 @@
         <image name="user-5" width="512" height="512"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="bUf-jZ-U4A"/>
+        <segue reference="Vd4-rJ-Ux7"/>
     </inferredMetricsTieBreakers>
 </document>

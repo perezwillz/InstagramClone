@@ -18,6 +18,18 @@ class SignInViewController: UIViewController {
         super.viewDidLoad()
         setUPViews()
         handleTextField()
+        
+    }
+    
+    func automaticallySignUsersIn(){
+        if Auth.auth().currentUser != nil {
+           self.performSegue(withIdentifier: "SignInToTabBar", sender: nil)
+        }
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        automaticallySignUsersIn()
     }
     
     func setUPViews(){
