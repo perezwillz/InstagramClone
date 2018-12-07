@@ -21,6 +21,7 @@ class SignUPViewController: UIViewController {
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var signUpButton: UIButton!
     
+  
     
     
     override func viewDidLoad() {
@@ -29,6 +30,8 @@ class SignUPViewController: UIViewController {
         setUpViews()
         addGestures()
         handleTextField()
+       profileImage.image?.accessibilityIdentifier = AccesbilityIdentifiers.oldImage.rawValue
+       
     }
     
     func setUpViews(){
@@ -94,30 +97,31 @@ class SignUPViewController: UIViewController {
         emailTextField.addTarget(self, action: #selector(self.textFieldDidChange), for: UIControl.Event.editingChanged)
     }
     
+  
+    
     @objc func textFieldDidChange(){
         guard let username = userNameTextField.text, !username.isEmpty,
             let password = passwordTextField.text, !password.isEmpty,
             let email = emailTextField.text, !email.isEmpty,
-           let _ = profileImage.image
+           let  _ = profileImage.image,
+        profileImage.image?.accessibilityIdentifier != "Old"
             else
         {
             //Fade sign up button text, Disable Buttn
             signUpButton.setTitleColor(UIColor.clear, for: .normal)
+            signUpButton.isEnabled = false
             signUpButton.layer.cornerRadius = 0
             return
         }
         //Everything ok: Highlight sign up button
-    
+        signUpButton.isEnabled = true
         signUpButton.setTitleColor(UIColor.white, for: UIControl.State.normal)
          signUpButton.layer.cornerRadius = 5
     }
     
     
     @IBAction func signUpBtnTouchUpInside(_ sender: Any) {
-        
         guard let username = userNameTextField.text, let email = emailTextField.text, let password = passwordTextField.text else {return}
-        
-        
         Auth.auth().createUser(withEmail: email, password: password) { (authResult : AuthDataResult?, error : Error?) in
             
             if error != nil {
@@ -136,8 +140,7 @@ class SignUPViewController: UIViewController {
             
             let newImageReference = imageRefence.child(uid)
             guard let userProfileImage = self.selectedImage else {return}
-            //Mark: - Check to make sure the image is not the image that is on the storyboard
-            guard   let imageData = userProfileImage.jpegData(compressionQuality: 0.1) else {return}
+            guard   let imageData = userProfileImage.jpegData(compressionQuality: 0.1) else { print("error converting mage to Jpeg"); return}
             newImageReference.putData(imageData, metadata: nil, completion: { (metadata, error) in
                 if error != nil {
                     return
@@ -165,6 +168,7 @@ extension SignUPViewController : UIImagePickerControllerDelegate, UINavigationCo
         let image = info[UIImagePickerController.InfoKey.originalImage] as! UIImage
         selectedImage = image
         profileImage.image = image
+        profileImage.image?.accessibilityIdentifier = AccesbilityIdentifiers.newImage.rawValue
         picker.dismiss(animated: true, completion: nil)
     }
     

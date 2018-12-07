@@ -26,6 +26,7 @@
 		B94FBEF021B52DEB007C3A92 /* Activity.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B94FBEEF21B52DEB007C3A92 /* Activity.storyboard */; };
 		B94FBEF221B52E0B007C3A92 /* Photo.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B94FBEF121B52E0B007C3A92 /* Photo.storyboard */; };
 		B94FBEF421B64B2B007C3A92 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B94FBEF321B64B2B007C3A92 /* GoogleService-Info.plist */; };
+		B9F632B421BA8B2E003383B9 /* AccesbilityIdentifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9F632B321BA8B2E003383B9 /* AccesbilityIdentifiers.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -51,6 +52,7 @@
 		B94FBEEF21B52DEB007C3A92 /* Activity.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Activity.storyboard; sourceTree = "<group>"; };
 		B94FBEF121B52E0B007C3A92 /* Photo.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Photo.storyboard; sourceTree = "<group>"; };
 		B94FBEF321B64B2B007C3A92 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		B9F632B321BA8B2E003383B9 /* AccesbilityIdentifiers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccesbilityIdentifiers.swift; sourceTree = "<group>"; };
 		DF4764FB8285B46A0BC73D93 /* Pods_InsagramCloneApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_InsagramCloneApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -114,6 +116,7 @@
 			children = (
 				B94FBED521B4B6E0007C3A92 /* SignInViewController.swift */,
 				B94FBED721B4BF18007C3A92 /* SignUPViewController.swift */,
+				B9F632B321BA8B2E003383B9 /* AccesbilityIdentifiers.swift */,
 			);
 			path = "SignUP&SignIn";
 			sourceTree = "<group>";
@@ -276,6 +279,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B9F632B421BA8B2E003383B9 /* AccesbilityIdentifiers.swift in Sources */,
 				B94FBED621B4B6E0007C3A92 /* SignInViewController.swift in Sources */,
 				B94FBEE121B4D038007C3A92 /* ActivityViewController.swift in Sources */,
 				B94FBEE521B4D06E007C3A92 /* SearchViewController.swift in Sources */,
