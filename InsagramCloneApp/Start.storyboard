@@ -49,6 +49,7 @@
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <connections>
+                                            <action selector="signInButtonTapped:" destination="Na1-I7-6M8" eventType="touchUpInside" id="Wd9-ON-Ti7"/>
                                             <segue destination="6Fw-Wb-6fP" kind="presentation" id="qbE-1c-qnV"/>
                                         </connections>
                                     </button>
@@ -88,6 +89,7 @@
                     <connections>
                         <outlet property="emailTextField" destination="IYs-1N-ivW" id="WE9-4g-Xo5"/>
                         <outlet property="passwordTextField" destination="nH0-9o-qi6" id="irj-uJ-8bt"/>
+                        <outlet property="signInButton" destination="6CR-sE-pQ5" id="u1c-rz-nLJ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UYj-rj-SD9" userLabel="First Responder" sceneMemberID="firstResponder"/>

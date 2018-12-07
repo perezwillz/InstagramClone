@@ -11,11 +11,12 @@ import UIKit
 class SignInViewController: UIViewController {
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
+    @IBOutlet weak var signInButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-setUPViews()
-        // Do any additional setup after loading the view.
+        setUPViews()
+        handleTextField()
     }
     
     func setUPViews(){
@@ -41,7 +42,34 @@ setUPViews()
        passwordTextField.layer.addSublayer(passwordTextFieldbottomLayer)
         passwordTextField.attributedPlaceholder = NSAttributedString(string: PasswordPlaceHolder, attributes: [NSAttributedString.Key.foregroundColor : UIColor(white: 1.0, alpha: 0.6)])
         
+    }
+    
+    
+    private func handleTextField(){
+        passwordTextField.addTarget(self, action: #selector(self.textFieldDidChange), for: UIControl.Event.editingChanged)
+        emailTextField.addTarget(self, action: #selector(self.textFieldDidChange), for: UIControl.Event.editingChanged)
+    }
+    
+    @objc func textFieldDidChange(){
+        guard
+            let password = passwordTextField.text, !password.isEmpty,
+            let email = emailTextField.text, !email.isEmpty
         
+            else
+        {
+            //Fade sign up button text, Disable Buttn
+            signInButton.setTitleColor(UIColor.clear, for: .normal)
+           signInButton.isEnabled = false
+            signInButton.layer.cornerRadius = 0
+            return
+        }
+        //Everything ok: Highlight sign up button
+        signInButton.isEnabled = true
+        signInButton.setTitleColor(UIColor.white, for: UIControl.State.normal)
+        signInButton.layer.cornerRadius = 5
     }
 
+
+    @IBAction func signInButtonTapped(_ sender: Any) {
+    }
 }
