@@ -21,8 +21,6 @@ class SignUPViewController: UIViewController {
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var signUpButton: UIButton!
     
-  
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,8 +28,8 @@ class SignUPViewController: UIViewController {
         setUpViews()
         addGestures()
         handleTextField()
-       profileImage.image?.accessibilityIdentifier = AccesbilityIdentifiers.oldImage.rawValue
-       
+        profileImage.image?.accessibilityIdentifier = AccesbilityIdentifiers.oldImage.rawValue
+        
     }
     
     func setUpViews(){
@@ -69,13 +67,12 @@ class SignUPViewController: UIViewController {
         passwordTextField.layer.addSublayer(passwordBottomLayer)
         passwordTextField.attributedPlaceholder = NSAttributedString(string: passwordPlaceHolder, attributes: [NSAttributedString.Key.foregroundColor : UIColor(white: 1.0, alpha: 0.6)])
         
-        //Image
-       
+      
         profileImage.layer.cornerRadius = 75
         profileImage.clipsToBounds = true
     }
     
-    func addGestures(){
+    private func addGestures(){
         profileImage.isUserInteractionEnabled = true
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(SignUPViewController.selectProfileImage))
         profileImage.addGestureRecognizer(tapGesture)
@@ -91,20 +88,19 @@ class SignUPViewController: UIViewController {
         dismiss(animated: true, completion: nil)
     }
     
-    func handleTextField(){
+   private func handleTextField(){
         userNameTextField.addTarget(self, action: #selector(self.textFieldDidChange), for: UIControl.Event.editingChanged)
         passwordTextField.addTarget(self, action: #selector(self.textFieldDidChange), for: UIControl.Event.editingChanged)
         emailTextField.addTarget(self, action: #selector(self.textFieldDidChange), for: UIControl.Event.editingChanged)
     }
     
-  
     
     @objc func textFieldDidChange(){
         guard let username = userNameTextField.text, !username.isEmpty,
             let password = passwordTextField.text, !password.isEmpty,
             let email = emailTextField.text, !email.isEmpty,
-           let  _ = profileImage.image,
-        profileImage.image?.accessibilityIdentifier != "Old"
+            let  _ = profileImage.image,
+            profileImage.image?.accessibilityIdentifier != "Old"
             else
         {
             //Fade sign up button text, Disable Buttn
@@ -116,7 +112,7 @@ class SignUPViewController: UIViewController {
         //Everything ok: Highlight sign up button
         signUpButton.isEnabled = true
         signUpButton.setTitleColor(UIColor.white, for: UIControl.State.normal)
-         signUpButton.layer.cornerRadius = 5
+        signUpButton.layer.cornerRadius = 5
     }
     
     
@@ -150,16 +146,17 @@ class SignUPViewController: UIViewController {
                     guard let downloadURL = url else {
                         return
                     }
-                    
                     let profileUrlString = downloadURL.absoluteString
-                    let ref = Database.database().reference()
-                    let userReference = ref.child("users")
-                    let newUserReference = userReference.child(uid)
-                    newUserReference.setValue(["username " : username, "email " : email, "profilrURL " : profileUrlString])
+                    setUsersInfo(profileURL: profileUrlString, username: username, email: email, uid: uid)
                 })})
-            
-        }
-    }
+        }}}
+
+
+func setUsersInfo(profileURL : String, username : String, email : String, uid : String){
+    let ref = Database.database().reference()
+    let userReference = ref.child("users")
+    let newUserReference = userReference.child(uid)
+    newUserReference.setValue(["username " : username, "email " : email, "profilrURL " : profileURL])
 }
 
 extension SignUPViewController : UIImagePickerControllerDelegate, UINavigationControllerDelegate {
