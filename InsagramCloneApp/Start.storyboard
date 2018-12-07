@@ -50,7 +50,6 @@
                                         </state>
                                         <connections>
                                             <action selector="signInButtonTapped:" destination="Na1-I7-6M8" eventType="touchUpInside" id="Wd9-ON-Ti7"/>
-                                            <segue destination="6Fw-Wb-6fP" kind="presentation" id="qbE-1c-qnV"/>
                                         </connections>
                                     </button>
                                 </subviews>
