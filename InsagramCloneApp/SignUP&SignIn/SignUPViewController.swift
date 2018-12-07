@@ -19,6 +19,7 @@ class SignUPViewController: UIViewController {
     @IBOutlet weak var userNameTextField: UITextField!
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
+    @IBOutlet weak var signUpButton: UIButton!
     
     
     
@@ -27,6 +28,7 @@ class SignUPViewController: UIViewController {
         
         setUpViews()
         addGestures()
+        handleTextField()
     }
     
     func setUpViews(){
@@ -65,6 +67,7 @@ class SignUPViewController: UIViewController {
         passwordTextField.attributedPlaceholder = NSAttributedString(string: passwordPlaceHolder, attributes: [NSAttributedString.Key.foregroundColor : UIColor(white: 1.0, alpha: 0.6)])
         
         //Image
+       
         profileImage.layer.cornerRadius = 75
         profileImage.clipsToBounds = true
     }
@@ -83,6 +86,30 @@ class SignUPViewController: UIViewController {
     @IBAction func dismissView(_ sender: Any) {
         
         dismiss(animated: true, completion: nil)
+    }
+    
+    func handleTextField(){
+        userNameTextField.addTarget(self, action: #selector(self.textFieldDidChange), for: UIControl.Event.editingChanged)
+        passwordTextField.addTarget(self, action: #selector(self.textFieldDidChange), for: UIControl.Event.editingChanged)
+        emailTextField.addTarget(self, action: #selector(self.textFieldDidChange), for: UIControl.Event.editingChanged)
+    }
+    
+    @objc func textFieldDidChange(){
+        guard let username = userNameTextField.text, !username.isEmpty,
+            let password = passwordTextField.text, !password.isEmpty,
+            let email = emailTextField.text, !email.isEmpty,
+           let _ = profileImage.image
+            else
+        {
+            //Fade sign up button text, Disable Buttn
+            signUpButton.setTitleColor(UIColor.clear, for: .normal)
+            signUpButton.layer.cornerRadius = 0
+            return
+        }
+        //Everything ok: Highlight sign up button
+    
+        signUpButton.setTitleColor(UIColor.white, for: UIControl.State.normal)
+         signUpButton.layer.cornerRadius = 5
     }
     
     
