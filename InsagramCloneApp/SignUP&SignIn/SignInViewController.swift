@@ -54,7 +54,7 @@ class SignInViewController: UIViewController {
         passwordTextFieldbottomLayer.backgroundColor = UIColor(red: 50/225, green: 50/255, blue: 25/255, alpha: 1).cgColor
        passwordTextField.layer.addSublayer(passwordTextFieldbottomLayer)
         passwordTextField.attributedPlaceholder = NSAttributedString(string: PasswordPlaceHolder, attributes: [NSAttributedString.Key.foregroundColor : UIColor(white: 1.0, alpha: 0.6)])
-        
+         signInButton.isEnabled = false
     }
     
     
@@ -87,13 +87,8 @@ class SignInViewController: UIViewController {
         guard let email = emailTextField.text, !email.isEmpty,
             let password = passwordTextField.text, !password.isEmpty else
         {return}
-        Auth.auth().signIn(withEmail: email, password: password) { (authDataResult, error) in
-            
-            if error != nil {
-                print(error!.localizedDescription)
-                return
-            }
-            self.performSegue(withIdentifier: "SignInToTabBar", sender: nil)
+       
+          AuthService.SignIn(email: email, password: password)
+        self.performSegue(withIdentifier: "SignInToTabBar", sender: nil)
         }
-    }
 }

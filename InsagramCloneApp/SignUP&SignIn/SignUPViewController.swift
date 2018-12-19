@@ -70,6 +70,7 @@ class SignUPViewController: UIViewController {
       
         profileImage.layer.cornerRadius = 75
         profileImage.clipsToBounds = true
+        signUpButton.isEnabled = false
     }
     
     private func addGestures(){

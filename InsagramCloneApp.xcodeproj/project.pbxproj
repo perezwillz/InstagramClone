@@ -26,6 +26,7 @@
 		B94FBEF021B52DEB007C3A92 /* Activity.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B94FBEEF21B52DEB007C3A92 /* Activity.storyboard */; };
 		B94FBEF221B52E0B007C3A92 /* Photo.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B94FBEF121B52E0B007C3A92 /* Photo.storyboard */; };
 		B94FBEF421B64B2B007C3A92 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B94FBEF321B64B2B007C3A92 /* GoogleService-Info.plist */; };
+		B9B920F221CA593E00BF41ED /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9B920F121CA593E00BF41ED /* AuthService.swift */; };
 		B9F632B421BA8B2E003383B9 /* AccesbilityIdentifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9F632B321BA8B2E003383B9 /* AccesbilityIdentifiers.swift */; };
 /* End PBXBuildFile section */
 
@@ -52,6 +53,7 @@
 		B94FBEEF21B52DEB007C3A92 /* Activity.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Activity.storyboard; sourceTree = "<group>"; };
 		B94FBEF121B52E0B007C3A92 /* Photo.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Photo.storyboard; sourceTree = "<group>"; };
 		B94FBEF321B64B2B007C3A92 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		B9B920F121CA593E00BF41ED /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
 		B9F632B321BA8B2E003383B9 /* AccesbilityIdentifiers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccesbilityIdentifiers.swift; sourceTree = "<group>"; };
 		DF4764FB8285B46A0BC73D93 /* Pods_InsagramCloneApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_InsagramCloneApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -98,6 +100,7 @@
 			isa = PBXGroup;
 			children = (
 				B94FBEC121B4B322007C3A92 /* AppDelegate.swift */,
+				B9B920F121CA593E00BF41ED /* AuthService.swift */,
 				B94FBEDA21B4CFD2007C3A92 /* SignUP&SignIn */,
 				B94FBEDB21B4CFE6007C3A92 /* TabBarVC's */,
 				B94FBED321B4B3B8007C3A92 /* Start.storyboard */,
@@ -286,6 +289,7 @@
 				B94FBED821B4BF18007C3A92 /* SignUPViewController.swift in Sources */,
 				B94FBEDF21B4D02A007C3A92 /* ProfileViewController.swift in Sources */,
 				B94FBEE321B4D051007C3A92 /* PhotoViewController.swift in Sources */,
+				B9B920F221CA593E00BF41ED /* AuthService.swift in Sources */,
 				B94FBEC221B4B322007C3A92 /* AppDelegate.swift in Sources */,
 				B94FBEDD21B4D014007C3A92 /* HomeViewController.swift in Sources */,
 			);
