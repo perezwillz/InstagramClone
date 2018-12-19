@@ -9,7 +9,7 @@ import FirebaseAuth
 import Foundation
 class AuthService {
     
-    static  func SignIn(email: String, password : String){
+    static  func SignIn(email: String, password : String,   onSucess :  @escaping () -> Void){
         
     Auth.auth().signIn(withEmail: email, password: password) { (authDataResult, error) in
     
@@ -17,7 +17,7 @@ class AuthService {
     print(error!.localizedDescription)
     return
     }
-    
+    onSucess()
     }
     }
 }
