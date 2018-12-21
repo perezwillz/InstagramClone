@@ -9,15 +9,27 @@ import FirebaseAuth
 import Foundation
 class AuthService {
     
-    static  func SignIn(email: String, password : String,   onSucess :  @escaping () -> Void){
-        
-    Auth.auth().signIn(withEmail: email, password: password) { (authDataResult, error) in
+    static  func SignIn(email: String, password : String,   onSucess :  @escaping () -> Void, onError : @escaping (_ errorMessage : String?) -> Void){
+        Auth.auth().signIn(withEmail: email, password: password) { (authDataResult, error) in
+            
+            if error != nil {
+                onError(error?.localizedDescription)
+                print(error!.localizedDescription)
+                return
+            }
+            onSucess()
+        }}
     
-    if error != nil {
-    print(error!.localizedDescription)
-    return
-    }
-    onSucess()
-    }
-    }
+    static  func SignUp(email: String, password : String,   onSucess :  @escaping () -> Void, onError : @escaping (_ errorMessage : String?) -> Void){
+        Auth.auth().signIn(withEmail: email, password: password) { (authDataResult, error) in
+            
+            if error != nil {
+                onError(error?.localizedDescription)
+                print(error!.localizedDescription)
+                return
+            }
+            onSucess()
+        }}
+    
+    
 }

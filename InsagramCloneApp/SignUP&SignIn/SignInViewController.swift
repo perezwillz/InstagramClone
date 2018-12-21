@@ -87,9 +87,11 @@ class SignInViewController: UIViewController {
         guard let email = emailTextField.text, !email.isEmpty,
             let password = passwordTextField.text, !password.isEmpty else
         {return}
-     AuthService.SignIn(email: email, password: password, onSucess: {
-         self.performSegue(withIdentifier: "SignInToTabBar", sender: nil)
-     })
-      
-        }
+        
+        
+        AuthService.SignIn(email: email, password: password, onSucess: { self.performSegue(withIdentifier: "SignInToTabBar", sender: nil)}, onError: { error in
+            print(error!)
+        })
+        
+             }
 }
