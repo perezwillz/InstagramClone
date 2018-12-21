@@ -16,7 +16,6 @@ class AuthService {
             
             if error != nil {
                 onError(error?.localizedDescription)
-              
                 return
             }
             onSucess()
@@ -29,7 +28,7 @@ class AuthService {
                 onError(error?.localizedDescription)
                 return
             }
-            
+           
             //UserID
             let userID = authResult?.user.uid
             guard let uid = userID else {return}
@@ -53,16 +52,16 @@ class AuthService {
                     }
                     let profileUrlString = downloadURL.absoluteString
                     
-                   self.setUsersInfo(profileURL: profileUrlString, username: userName, email: email, uid: uid)
+                   self.setUsersInfo(profileURL: profileUrlString, username: userName, email: email, uid: uid, onSucess :  onSucess)
                    
                 })})
         }}
-   static func setUsersInfo(profileURL : String, username : String, email : String, uid : String){
+   static func setUsersInfo(profileURL : String, username : String, email : String, uid : String, onSucess :  @escaping () -> Void){
         let ref = Database.database().reference()
         let userReference = ref.child("users")
         let newUserReference = userReference.child(uid)
         newUserReference.setValue(["username " : username, "email " : email, "profilrURL " : profileURL])
-        
+         onSucess()
     }
 
 }
