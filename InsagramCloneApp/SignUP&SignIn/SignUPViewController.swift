@@ -119,50 +119,14 @@ class SignUPViewController: UIViewController {
     
     @IBAction func signUpBtnTouchUpInside(_ sender: Any) {
         guard let username = userNameTextField.text, let email = emailTextField.text, let password = passwordTextField.text else {return}
-        Auth.auth().createUser(withEmail: email, password: password) { (authResult : AuthDataResult?, error : Error?) in
-            
-            if error != nil {
-                print(error!.localizedDescription)
-                return
-            }
-            
-            //UserID
-            let userID = authResult?.user.uid
-            guard let uid = userID else {return}
-            
-            //FirebaseStorage
-            //Saving Image
-            let storageRef = Storage.storage().reference(forURL : "gs://instagramclone-7e77c.appspot.com")
-            let imageRefence = storageRef.child("profile_image")
-            
-            let newImageReference = imageRefence.child(uid)
-            guard let userProfileImage = self.selectedImage else {return}
-            guard   let imageData = userProfileImage.jpegData(compressionQuality: 0.1) else { print("error converting mage to Jpeg"); return}
-            newImageReference.putData(imageData, metadata: nil, completion: { (metadata, error) in
-                if error != nil {
-                    return
-                }
-                
-                newImageReference.downloadURL(completion: { (url, error) in
-                    guard let downloadURL = url else {
-                        return
-                    }
-                    let profileUrlString = downloadURL.absoluteString
-                    setUsersInfo(profileURL: profileUrlString, username: username, email: email, uid: uid)
-                      self.performSegue(withIdentifier: "SignUPToTabBar", sender: nil)
-                })})
-        }}}
+        AuthService.SignUp(userName: username, email: email, password: password, profileImage: selectedImage, onSucess: ({
+             self.performSegue(withIdentifier: "SignUPToTabBar", sender: nil)
+        })) { (error) in
+            print(error!)
+        }
+       }
 
-
-func setUsersInfo(profileURL : String, username : String, email : String, uid : String){
-    let ref = Database.database().reference()
-    let userReference = ref.child("users")
-    let newUserReference = userReference.child(uid)
-    newUserReference.setValue(["username " : username, "email " : email, "profilrURL " : profileURL])
-    
-    
 }
-
 extension SignUPViewController : UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
