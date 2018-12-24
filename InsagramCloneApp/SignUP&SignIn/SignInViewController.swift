@@ -82,8 +82,12 @@ class SignInViewController: UIViewController {
         signInButton.layer.cornerRadius = 5
     }
 
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        view.endEditing(true)
+    }
 
     @IBAction func signInButtonTapped(_ sender: Any) {
+             view.endEditing(true)
         guard let email = emailTextField.text, !email.isEmpty,
             let password = passwordTextField.text, !password.isEmpty else
         {return}

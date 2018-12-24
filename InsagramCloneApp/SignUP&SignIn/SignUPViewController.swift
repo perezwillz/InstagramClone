@@ -84,6 +84,8 @@ class SignUPViewController: UIViewController {
         pickerController.delegate = self
         present(pickerController, animated:  true, completion: nil)
     }
+    
+    
     @IBAction func dismissView(_ sender: Any) {
         
         dismiss(animated: true, completion: nil)
@@ -118,6 +120,7 @@ class SignUPViewController: UIViewController {
     
     
     @IBAction func signUpBtnTouchUpInside(_ sender: Any) {
+          view.endEditing(true)
         guard let username = userNameTextField.text, let email = emailTextField.text, let password = passwordTextField.text else {return}
         AuthService.SignUp(userName: username, email: email, password: password, profileImage: selectedImage, onSucess: ({
              self.performSegue(withIdentifier: "SignUPToTabBar", sender: nil)
@@ -140,4 +143,10 @@ extension SignUPViewController : UIImagePickerControllerDelegate, UINavigationCo
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
         picker.dismiss(animated: true, completion: nil)
     }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        view.endEditing(true)
+    }
 }
+
+
