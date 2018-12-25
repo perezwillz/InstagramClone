@@ -26,6 +26,8 @@
 		B94FBEF021B52DEB007C3A92 /* Activity.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B94FBEEF21B52DEB007C3A92 /* Activity.storyboard */; };
 		B94FBEF221B52E0B007C3A92 /* Photo.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B94FBEF121B52E0B007C3A92 /* Photo.storyboard */; };
 		B94FBEF421B64B2B007C3A92 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B94FBEF321B64B2B007C3A92 /* GoogleService-Info.plist */; };
+		B9AA53F121D2AB850077E678 /* ProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = B9AA53EF21D2AB840077E678 /* ProgressHUD.bundle */; };
+		B9AA53F221D2AB850077E678 /* ProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = B9AA53F021D2AB850077E678 /* ProgressHUD.m */; };
 		B9B920F221CA593E00BF41ED /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9B920F121CA593E00BF41ED /* AuthService.swift */; };
 		B9F632B421BA8B2E003383B9 /* AccesbilityIdentifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9F632B321BA8B2E003383B9 /* AccesbilityIdentifiers.swift */; };
 /* End PBXBuildFile section */
@@ -53,6 +55,10 @@
 		B94FBEEF21B52DEB007C3A92 /* Activity.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Activity.storyboard; sourceTree = "<group>"; };
 		B94FBEF121B52E0B007C3A92 /* Photo.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Photo.storyboard; sourceTree = "<group>"; };
 		B94FBEF321B64B2B007C3A92 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		B9AA53ED21D2AB830077E678 /* InsagramCloneApp-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "InsagramCloneApp-Bridging-Header.h"; sourceTree = "<group>"; };
+		B9AA53EE21D2AB840077E678 /* ProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProgressHUD.h; sourceTree = "<group>"; };
+		B9AA53EF21D2AB840077E678 /* ProgressHUD.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = ProgressHUD.bundle; sourceTree = "<group>"; };
+		B9AA53F021D2AB850077E678 /* ProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProgressHUD.m; sourceTree = "<group>"; };
 		B9B920F121CA593E00BF41ED /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
 		B9F632B321BA8B2E003383B9 /* AccesbilityIdentifiers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccesbilityIdentifiers.swift; sourceTree = "<group>"; };
 		DF4764FB8285B46A0BC73D93 /* Pods_InsagramCloneApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_InsagramCloneApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -110,6 +116,10 @@
 				B94FBECA21B4B327007C3A92 /* LaunchScreen.storyboard */,
 				B94FBEF321B64B2B007C3A92 /* GoogleService-Info.plist */,
 				B94FBECD21B4B327007C3A92 /* Info.plist */,
+				B9AA53EF21D2AB840077E678 /* ProgressHUD.bundle */,
+				B9AA53EE21D2AB840077E678 /* ProgressHUD.h */,
+				B9AA53F021D2AB850077E678 /* ProgressHUD.m */,
+				B9AA53ED21D2AB830077E678 /* InsagramCloneApp-Bridging-Header.h */,
 			);
 			path = InsagramCloneApp;
 			sourceTree = "<group>";
@@ -191,6 +201,7 @@
 				TargetAttributes = {
 					B94FBEBD21B4B322007C3A92 = {
 						CreatedOnToolsVersion = 10.0;
+						LastSwiftMigration = 1000;
 					};
 				};
 			};
@@ -217,6 +228,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B9AA53F121D2AB850077E678 /* ProgressHUD.bundle in Resources */,
 				B94FBECC21B4B327007C3A92 /* LaunchScreen.storyboard in Resources */,
 				B94FBEEA21B52D6E007C3A92 /* Home.storyboard in Resources */,
 				B94FBEF221B52E0B007C3A92 /* Photo.storyboard in Resources */,
@@ -260,6 +272,7 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-InsagramCloneApp/Pods-InsagramCloneApp-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/ProgressHUD/ProgressHUD.framework",
 				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
@@ -267,6 +280,7 @@
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ProgressHUD.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
@@ -288,6 +302,7 @@
 				B94FBEE521B4D06E007C3A92 /* SearchViewController.swift in Sources */,
 				B94FBED821B4BF18007C3A92 /* SignUPViewController.swift in Sources */,
 				B94FBEDF21B4D02A007C3A92 /* ProfileViewController.swift in Sources */,
+				B9AA53F221D2AB850077E678 /* ProgressHUD.m in Sources */,
 				B94FBEE321B4D051007C3A92 /* PhotoViewController.swift in Sources */,
 				B9B920F221CA593E00BF41ED /* AuthService.swift in Sources */,
 				B94FBEC221B4B322007C3A92 /* AppDelegate.swift in Sources */,
@@ -430,6 +445,7 @@
 			baseConfigurationReference = 04D981571DD453C5160B7E27 /* Pods-InsagramCloneApp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = K3LN6LR5X2;
 				INFOPLIST_FILE = InsagramCloneApp/Info.plist;
@@ -439,6 +455,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = CSG.InsagramCloneApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "InsagramCloneApp/InsagramCloneApp-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -449,6 +467,7 @@
 			baseConfigurationReference = 4FABEDC99994B04466E7C857 /* Pods-InsagramCloneApp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = K3LN6LR5X2;
 				INFOPLIST_FILE = InsagramCloneApp/Info.plist;
@@ -458,6 +477,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = CSG.InsagramCloneApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "InsagramCloneApp/InsagramCloneApp-Bridging-Header.h";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

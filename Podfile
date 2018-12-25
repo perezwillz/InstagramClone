@@ -8,6 +8,7 @@ target 'InsagramCloneApp' do
   pod 'Firebase/Auth'
   pod 'Firebase/Database'
   pod 'Firebase/Storage'
+  pod 'ProgressHUD'
   # Pods for InsagramCloneApp
 
 end
