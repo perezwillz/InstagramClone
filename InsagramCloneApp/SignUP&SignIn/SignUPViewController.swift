@@ -124,7 +124,7 @@ class SignUPViewController: UIViewController {
         ProgressHUD.show("Creating profile...", interaction: false)
         guard let username = userNameTextField.text, let email = emailTextField.text, let password = passwordTextField.text else {return}
         AuthService.SignUp(userName: username, email: email, password: password, profileImage: selectedImage, onSucess: ({
-            ProgressHUD.showSuccess("Sucess")
+            
              self.performSegue(withIdentifier: "SignUPToTabBar", sender: nil)
         })) { (error) in
             print(error!)
