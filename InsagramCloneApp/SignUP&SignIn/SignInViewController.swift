@@ -88,14 +88,21 @@ class SignInViewController: UIViewController {
 
     @IBAction func signInButtonTapped(_ sender: Any) {
              view.endEditing(true)
+         ProgressHUD.show("Authorizing...", interaction: true)
         guard let email = emailTextField.text, !email.isEmpty,
             let password = passwordTextField.text, !password.isEmpty else
         {return}
         
-        
-        AuthService.SignIn(email: email, password: password, onSucess: { self.performSegue(withIdentifier: "SignInToTabBar", sender: nil)}, onError: { error in
+        AuthService.SignIn(email: email, password: password, onSucess: {
+           
+           
+           self.performSegue(withIdentifier: "SignInToTabBar", sender: nil)
+             ProgressHUD.dismiss()
+        }, onError: {
+                error in
+            ProgressHUD.showError(error!)
             print(error!)
         })
-        
+   
              }
 }
