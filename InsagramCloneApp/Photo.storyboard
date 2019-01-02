@@ -20,15 +20,18 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="F0I-bi-JpZ">
                                 <rect key="frame" x="0.0" y="64" width="375" height="110"/>
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Rue-AY-B3Z">
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Rue-AY-B3Z">
                                         <rect key="frame" x="8" y="8" width="359" height="94"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="camera" translatesAutoresizingMaskIntoConstraints="NO" id="KWb-0Y-epN">
-                                                <rect key="frame" x="0.0" y="0.0" width="175.5" height="94"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="131" height="94"/>
                                             </imageView>
                                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="0Ub-XX-AZK">
-                                                <rect key="frame" x="183.5" y="0.0" width="175.5" height="94"/>
+                                                <rect key="frame" x="139" y="0.0" width="220" height="94"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="220" id="w9r-jS-sIm"/>
+                                                </constraints>
                                                 <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -36,6 +39,7 @@
                                         </subviews>
                                         <constraints>
                                             <constraint firstAttribute="bottom" secondItem="KWb-0Y-epN" secondAttribute="bottom" id="3nH-JS-jWi"/>
+                                            <constraint firstAttribute="trailing" secondItem="0Ub-XX-AZK" secondAttribute="trailing" id="CGq-7R-idU"/>
                                             <constraint firstItem="0Ub-XX-AZK" firstAttribute="leading" secondItem="KWb-0Y-epN" secondAttribute="trailing" constant="8" id="NmR-cn-eG1"/>
                                             <constraint firstItem="KWb-0Y-epN" firstAttribute="leading" secondItem="Rue-AY-B3Z" secondAttribute="leading" id="lCU-2d-dW1"/>
                                             <constraint firstItem="KWb-0Y-epN" firstAttribute="top" secondItem="Rue-AY-B3Z" secondAttribute="top" id="nDN-qQ-gBf"/>
