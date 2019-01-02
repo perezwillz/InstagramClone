@@ -7,6 +7,9 @@
 //
 
 import UIKit
+import FirebaseAuth
+import FirebaseDatabase
+import FirebaseStorage
 
 class PhotoViewController: UIViewController {
 
@@ -22,6 +25,32 @@ addGestures()
     }
     
     @IBAction func shareButtnTapped(_ sender: Any) {
+        
+        guard let postImage = selectedImage else { ProgressHUD.showError("Please select an Image to Post"); return}
+        
+        ProgressHUD.show("Creating profile...", interaction: false)
+          guard  let imageData = postImage.jpegData(compressionQuality: 0.1) else { print("error converting mage to Jpeg"); return}
+        
+        //Saving Image
+        let storageRef = Storage.storage().reference(forURL : "gs://instagramclone-7e77c.appspot.com")
+        let imageRefence = storageRef.child("posts")
+        let photoIDString = NSUUID().uuidString
+      let newImageReference = imageRefence.child(photoIDString)
+        
+        newImageReference.putData(imageData, metadata: nil, completion: { (metadata, error) in
+            if error != nil {
+                return
+            }
+            
+            newImageReference.downloadURL(completion: { (url, error) in
+                guard let downloadURL = url else {
+                    return
+                }
+                let photoUrlString = downloadURL.absoluteString
+                
+               
+                
+            })})
         
     }
     
