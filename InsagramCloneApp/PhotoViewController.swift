@@ -26,6 +26,7 @@ class PhotoViewController: UIViewController {
     
     @IBAction func shareButtnTapped(_ sender: Any) {
         
+        
         guard let postImage = selectedImage else { ProgressHUD.showError("Please select an Image to Post"); return}
         
         ProgressHUD.show("Posting Photo", interaction: false)
@@ -48,7 +49,7 @@ class PhotoViewController: UIViewController {
                     return
                 }
                 let photoUrlString = downloadURL.absoluteString
-               self.sendDataToDatabase(photoURLString: photoUrlString)
+                self.sendDataToDatabase(photoURLString: photoUrlString)
             })})
     }
     
@@ -57,17 +58,34 @@ class PhotoViewController: UIViewController {
         let postsReference = ref.child("posts")
         let newPostID = postsReference.childByAutoId().key
         let newPostReference = postsReference.child(newPostID)
-       
         
-        //newPostReference.setValue(["photoURL" : photoURLString])
-        newPostReference.setValue(["photoURL" : photoURLString]) { (error, ref) in
+        guard let captionTextView = captionTextView.text else {
+            newPostReference.setValue(["photoURL" : photoURLString]) { (error, ref) in
+                if error != nil {
+                    ProgressHUD.showError(error?.localizedDescription)
+                    return
+                }
+                ProgressHUD.showSuccess("Sucess")
+                self.photo.image = UIImage(named: "camera")
+                self.tabBarController?.selectedIndex = 0
+                            }
+            return
+        }
+        //end
+        
+        newPostReference.setValue(["photoURL" : photoURLString, "caption" : captionTextView]) { (error, ref) in
             if error != nil {
                 ProgressHUD.showError(error?.localizedDescription)
                 return
             }
             ProgressHUD.showSuccess("Sucess")
+            self.captionTextView.text = ""
+            self.photo.image = UIImage(named: "camera")
+            self.tabBarController?.selectedIndex = 0
         }
+        return
     }
+    
     
     //gestureRecognizer
     private func addGestures(){
