@@ -12,7 +12,7 @@ import FirebaseDatabase
 import FirebaseStorage
 
 class PhotoViewController: UIViewController {
-
+    
     @IBOutlet weak var shareButtn: UIButton!
     @IBOutlet weak var captionTextView: UITextView!
     @IBOutlet weak var photo: UIImageView!
@@ -20,8 +20,8 @@ class PhotoViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-addGestures()
-          photo.image?.accessibilityIdentifier = AccesbilityIdentifiers.oldImage.rawValue
+        addGestures()
+        photo.image?.accessibilityIdentifier = AccesbilityIdentifiers.oldImage.rawValue
     }
     
     @IBAction func shareButtnTapped(_ sender: Any) {
@@ -29,13 +29,13 @@ addGestures()
         guard let postImage = selectedImage else { ProgressHUD.showError("Please select an Image to Post"); return}
         
         ProgressHUD.show("Creating profile...", interaction: false)
-          guard  let imageData = postImage.jpegData(compressionQuality: 0.1) else { print("error converting mage to Jpeg"); return}
+        guard  let imageData = postImage.jpegData(compressionQuality: 0.1) else { print("error converting mage to Jpeg"); return}
         
         //Saving Image
         let storageRef = Storage.storage().reference(forURL : "gs://instagramclone-7e77c.appspot.com")
         let imageRefence = storageRef.child("posts")
         let photoIDString = NSUUID().uuidString
-      let newImageReference = imageRefence.child(photoIDString)
+        let newImageReference = imageRefence.child(photoIDString)
         
         newImageReference.putData(imageData, metadata: nil, completion: { (metadata, error) in
             if error != nil {
@@ -47,25 +47,29 @@ addGestures()
                     return
                 }
                 let photoUrlString = downloadURL.absoluteString
-                
-               
-                
+              //  self.sendDataToDatabase()
             })})
-        
+    }
+    
+    func sendDataToDatabase(){
+        let ref = Database.database().reference()
+        let postsReference = ref.child("posts")
+        let newPostReference = postsReference.child(uid)
+        newPostReference.
     }
     
     //gestureRecognizer
     private func addGestures(){
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(self.handleSelectPostImage))
         photo.addGestureRecognizer(tapGesture)
-         photo.isUserInteractionEnabled = true
+        photo.isUserInteractionEnabled = true
     }
     
     
-   @objc func handleSelectPostImage(){
-    let pickerController = UIImagePickerController()
-    pickerController.delegate = self
-    present(pickerController, animated:  true, completion: nil)
+    @objc func handleSelectPostImage(){
+        let pickerController = UIImagePickerController()
+        pickerController.delegate = self
+        present(pickerController, animated:  true, completion: nil)
     }
     
 }
