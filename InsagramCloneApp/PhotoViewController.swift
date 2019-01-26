@@ -28,7 +28,7 @@ class PhotoViewController: UIViewController {
         
         guard let postImage = selectedImage else { ProgressHUD.showError("Please select an Image to Post"); return}
         
-        ProgressHUD.show("Creating profile...", interaction: false)
+        ProgressHUD.show("Posting Photo", interaction: false)
         guard  let imageData = postImage.jpegData(compressionQuality: 0.1) else { print("error converting mage to Jpeg"); return}
         
         //Saving Image
@@ -47,15 +47,25 @@ class PhotoViewController: UIViewController {
                     return
                 }
                 let photoUrlString = downloadURL.absoluteString
-              //  self.sendDataToDatabase()
+               self.sendDataToDatabase(photoURLString: photoUrlString)
             })})
     }
     
-    func sendDataToDatabase(){
+    func sendDataToDatabase(photoURLString : String){
         let ref = Database.database().reference()
         let postsReference = ref.child("posts")
-        let newPostReference = postsReference.child(uid)
-        newPostReference.
+        let newPostID = postsReference.childByAutoId().key
+        let newPostReference = postsReference.child(newPostID)
+       
+        
+        //newPostReference.setValue(["photoURL" : photoURLString])
+        newPostReference.setValue(["photoURL" : photoURLString]) { (error, ref) in
+            if error != nil {
+                ProgressHUD.showError(error?.localizedDescription)
+                return
+            }
+            ProgressHUD.showSuccess("Sucess")
+        }
     }
     
     //gestureRecognizer
