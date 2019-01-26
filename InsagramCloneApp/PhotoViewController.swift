@@ -39,6 +39,7 @@ class PhotoViewController: UIViewController {
         
         newImageReference.putData(imageData, metadata: nil, completion: { (metadata, error) in
             if error != nil {
+                ProgressHUD.showError(error?.localizedDescription)
                 return
             }
             
