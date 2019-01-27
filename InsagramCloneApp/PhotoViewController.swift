@@ -37,7 +37,7 @@ class PhotoViewController: UIViewController {
             self.shareButtn.backgroundColor  = .black
         } else {
             self.shareButtn.isEnabled = false
-            self.shareButtn.backgroundColor =  UIColor.darkGray
+            self.shareButtn.backgroundColor =  UIColor.lightGray
         }
     }
     
