@@ -24,8 +24,24 @@ class PhotoViewController: UIViewController {
         photo.image?.accessibilityIdentifier = AccesbilityIdentifiers.oldImage.rawValue
     }
     
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        handlePost()
+    }
+    
+    func handlePost(){
+        guard let photoID = photo.image?.accessibilityIdentifier else { return}
+        if photoID == AccesbilityIdentifiers.newImage.rawValue {
+            self.shareButtn.isEnabled = true
+            self.shareButtn.backgroundColor  = .black
+        } else {
+            self.shareButtn.isEnabled = false
+            self.shareButtn.backgroundColor =  UIColor.darkGray
+        }
+    }
+    
     @IBAction func shareButtnTapped(_ sender: Any) {
-        
         
         guard let postImage = selectedImage else { ProgressHUD.showError("Please select an Image to Post"); return}
         
