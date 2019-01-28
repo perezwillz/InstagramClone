@@ -16,6 +16,7 @@ class PhotoViewController: UIViewController {
     @IBOutlet weak var shareButtn: UIButton!
     @IBOutlet weak var captionTextView: UITextView!
     @IBOutlet weak var photo: UIImageView!
+    @IBOutlet weak var removeButtn: UIBarButtonItem!
     var selectedImage : UIImage?
     
     override func viewDidLoad() {
@@ -35,9 +36,11 @@ class PhotoViewController: UIViewController {
         if photoID == AccesbilityIdentifiers.newImage.rawValue {
             self.shareButtn.isEnabled = true
             self.shareButtn.backgroundColor  = .black
+            self.removeButtn.isEnabled = true
         } else {
             self.shareButtn.isEnabled = false
             self.shareButtn.backgroundColor =  UIColor.lightGray
+            self.removeButtn.isEnabled = false
         }
     }
     
@@ -59,8 +62,7 @@ class PhotoViewController: UIViewController {
                 ProgressHUD.showError(error?.localizedDescription)
                 return
             }
-            
-            newImageReference.downloadURL(completion: { (url, error) in
+             newImageReference.downloadURL(completion: { (url, error) in
                 guard let downloadURL = url else {
                     return
                 }
@@ -87,21 +89,28 @@ class PhotoViewController: UIViewController {
                             }
             return
         }
-        //end
-        
         newPostReference.setValue(["photoURL" : photoURLString, "caption" : captionTextView]) { (error, ref) in
             if error != nil {
                 ProgressHUD.showError(error?.localizedDescription)
                 return
             }
             ProgressHUD.showSuccess("Sucess")
-            self.captionTextView.text = ""
-            self.photo.image = UIImage(named: "camera")
+     
+            self.clean()
             self.tabBarController?.selectedIndex = 0
         }
         return
     }
     
+    @IBAction func cancelImageSelection(_ sender: Any) {
+       clean()
+        handlePost()
+    }
+    
+    func clean(){
+        self.captionTextView.text = ""
+        self.photo.image = UIImage(named: "camera")
+    }
     
     //gestureRecognizer
     private func addGestures(){
