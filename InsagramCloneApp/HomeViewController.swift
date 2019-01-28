@@ -10,7 +10,9 @@ import UIKit
 import FirebaseDatabase
 import FirebaseAuth
 class HomeViewController: UIViewController {
-
+    
+    
+    var posts = [Post]()
     @IBOutlet weak var tableView: UITableView!
     
     override func viewDidLoad() {
@@ -19,23 +21,29 @@ class HomeViewController: UIViewController {
     }
     
     func loadPosts(){
-    let dataBaseRef =   Database.database().reference().child("posts")
-        let childAddedObserver = dataBaseRef.observe(.childAdded) { (snapShot : DataSnapshot) in
-            //grabs all data, included new added child events
-            //eachPost wiill be retrieved one by one into an optional dictionary
-            print(snapShot.value)
-           
+        let dataBaseRef =   Database.database().reference().child("posts")
+        _ = dataBaseRef.observe(.childAdded) { (snapShot : DataSnapshot) in
+            
+            if  let dict = snapShot.value as? [String : Any] {
+                let caption = dict["caption"] as? String
+                let photoURL = dict["photoURL"] as! String
+                
+                let post = Post(captionText: caption ?? "", photoURLString: photoURL)
+                self.posts.append(post)
+                self.tableView.reloadData()
+                
+            }
         }
     }
     @IBAction func logoutButtonPressed(_ sender: Any) {
         do {
-     try  Auth.auth().signOut()
+            try  Auth.auth().signOut()
         } catch let logOutError {
             NSLog( "Error while trying to log out : \(logOutError.localizedDescription)")
         }
-      
+        
         let storyboard = UIStoryboard(name: "Start", bundle: nil)
-      let SignInVC =   storyboard.instantiateViewController(withIdentifier: "SignInVC")
+        let SignInVC =   storyboard.instantiateViewController(withIdentifier: "SignInVC")
         self.present(SignInVC, animated: true, completion: nil)
     }
     
@@ -43,13 +51,14 @@ class HomeViewController: UIViewController {
 
 extension HomeViewController : UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        return posts.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "postCell", for: indexPath)
-        cell.backgroundColor = .red
+        let post = posts[indexPath.row]
+        cell.textLabel?.text = post.caption
         return cell
     }
     
