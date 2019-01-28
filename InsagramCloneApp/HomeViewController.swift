@@ -22,6 +22,7 @@ class HomeViewController: UIViewController {
     let dataBaseRef =   Database.database().reference().child("posts")
         let childAddedObserver = dataBaseRef.observe(.childAdded) { (snapShot : DataSnapshot) in
             //grabs all data, included new added child events
+            //eachPost wiill be retrieved one by one into an optional dictionary
             print(snapShot.value)
            
         }
