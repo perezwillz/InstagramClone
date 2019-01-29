@@ -30,8 +30,10 @@ class HomeViewController: UIViewController {
                 
                 let post = Post(captionText: caption ?? "", photoURLString: photoURL)
                 self.posts.append(post)
-                self.tableView.reloadData()
-                
+                DispatchQueue.main.async {
+                      self.tableView.reloadData()
+                }
+             
             }
         }
     }
